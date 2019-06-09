@@ -1,0 +1,21 @@
+<div>
+  <h2> Add new bulletin board </h2>
+
+  <hr>
+
+  <%= form_for @group do |f| %>
+
+  Title
+  <br>
+  <%= f.text_field :title%>
+  <br>
+  Description
+  <br>
+  <%= f.text_area :description%>
+  <br>
+
+  <%= f.submit "Submit", :disable_with => 'Submitting...' %>
+  <% end %>
+
+
+</div>
