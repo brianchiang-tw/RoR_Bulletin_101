@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 
   before_action :authenticate_user!, :only => [:new, :create]
+  before_action :check_is_group_member, :only => [:new, :create]
 
   def new
     @group = Group.find( params[:group_id] )
@@ -23,6 +24,18 @@ class PostsController < ApplicationController
 
   end
   # End of method create
+
+
+  # Only group member can write a post
+  def check_is_group_member
+    @group = Group.find( params[:group_id] )
+
+    if current_user.is_member_of?( @group ) == false
+      redirect_to group_path( @group ), alert: "Only group member can write a post."
+    end
+
+  end
+  #End of method check_is_group_member
 
 
   def post_params
