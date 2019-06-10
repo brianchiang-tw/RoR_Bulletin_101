@@ -1,0 +1,30 @@
+<div class="col-md-12">
+
+  <h2 class="text-center"> Joined bulletin board </h2s>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <td> # </td>
+        <td> Title </td>
+        <td> Description </td>
+        <td> Post Count </td>
+        <td> Last Update </td>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @groups.each do |grp| %>
+        <tr>
+          <td> # </td>
+          <td> <%= link_to(grp.title, group_path(grp) ) %> </td>
+          <td> <%= grp.description %> </td>
+          <td> <%= grp.posts.count %> </td>
+          <td> <%= grp.updated_at  %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+
+  </table>
+
+</div>
