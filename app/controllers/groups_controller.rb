@@ -12,7 +12,8 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
 
     # post is shown with descending time order
-    @posts = @group.posts.recent
+    # add paging, set one paging group as 5 pages
+    @posts = @group.posts.recent.paginate(:page => params[:page], :per_page => 5 )
   end
 
 
