@@ -17,4 +17,28 @@
     <%= @group.description %>
   </p>
 
+  <table class="table">
+    <thead>
+      <tr>
+        <th> Content of the post</th>
+        <th> Writer </th>
+        <th> Post time </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @posts.each do |p| %>
+        <tr>
+          <td> <%= p.content %> </td>
+          <td> <%= p.user.email %> </td>
+          <td> <%= p.created_at %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+
+  </table>
+
+
+
+
 </div>
