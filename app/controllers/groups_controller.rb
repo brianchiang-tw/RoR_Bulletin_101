@@ -10,7 +10,9 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
-    @posts = @group.posts
+
+    # post is shown with descending time order
+    @posts = @group.posts.order("created_at DESC")
   end
 
 
