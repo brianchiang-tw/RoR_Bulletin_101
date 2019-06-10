@@ -1,4 +1,4 @@
-<%= form_for @group  do |f| %>
+<%= simple_form_for @group  do |f| %>
 
 <% if @group.errors.any? %>
 <ul>
@@ -12,15 +12,8 @@
 
 
 <div class="form-group">
-  <div class="form-group string optional">
-    <%= f.label "title", :class => "string optional control-label" %>
-    <%= f.text_field :title, :class => "string optional form-control" %>
-  </div>
-
-  <div class="form-group string optional">
-    <%= f.label "description", :class => "string optional control-label" %>
-    <%= f.text_area :description, :class => "string optional form-control" %>
-  </div>
+  <%= f.input :title, input_html: { class: "form-control" } %>
+  <%= f.input :description, input_html: { class: "form-control" } %>
 </div>
 
 <%= f.submit "Submit", class: "btn btn-primary", data: { disable_with: "Submitting..." } %>
