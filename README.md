@@ -1,24 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Reference: 
 
-Things you may want to cover:
 
-* Ruby version
+https://fullstack.qzy.camp/courses/3/syllabus
 
-* System dependencies
+http://docs.railsbridge.org/intro-to-rails/
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+https://www.railstutorial.org/book
