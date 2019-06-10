@@ -37,6 +37,8 @@ class GroupsController < ApplicationController
     @group.user = current_user
 
     if @group.save
+      # Group creator is a member by default human intuition
+      current_user.join!(@group)
       redirect_to groups_path
     else
       render :new
